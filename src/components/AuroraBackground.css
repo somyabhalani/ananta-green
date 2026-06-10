@@ -1,0 +1,127 @@
+/* AuroraBackground.css */
+.aurora-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  background-color: var(--color-canvas-base);
+  pointer-events: none;
+}
+
+.aurora-band {
+  position: absolute;
+  filter: blur(80px); /* Slightly reduced blur for punchier colors */
+  border-radius: 50%;
+  opacity: 0.85; /* Increased base opacity */
+}
+
+/* Wide, sweeping bands of light to mimic an aurora */
+.band-1 {
+  background: var(--color-aurora-sage);
+  width: 160vw;
+  height: 40vh;
+  top: -10%;
+  left: -30vw;
+  animation: aurora-shift-1 25s infinite alternate ease-in-out;
+}
+
+.band-2 {
+  background: var(--color-aurora-mint);
+  width: 140vw;
+  height: 45vh;
+  top: 25%;
+  right: -20vw;
+  animation: aurora-shift-2 22s infinite alternate ease-in-out;
+}
+
+.band-3 {
+  background: var(--color-aurora-blush);
+  width: 150vw;
+  height: 50vh;
+  top: 55%;
+  left: -25vw;
+  animation: aurora-shift-3 28s infinite alternate ease-in-out;
+}
+
+.band-4 {
+  background: var(--color-aurora-lavender);
+  width: 160vw;
+  height: 40vh;
+  bottom: -5%;
+  right: -30vw;
+  animation: aurora-shift-4 26s infinite alternate ease-in-out;
+}
+
+/* NEW BANDS for more density */
+.band-5 {
+  background: var(--color-aurora-sage);
+  width: 120vw;
+  height: 60vh;
+  top: 10%;
+  left: 10vw;
+  animation: aurora-shift-5 20s infinite alternate ease-in-out;
+}
+
+.band-6 {
+  background: var(--color-aurora-mint);
+  width: 130vw;
+  height: 55vh;
+  top: 40%;
+  right: 10vw;
+  animation: aurora-shift-6 24s infinite alternate ease-in-out;
+}
+
+.band-7 {
+  background: var(--color-aurora-blush);
+  width: 140vw;
+  height: 40vh;
+  top: -5%;
+  right: -10vw;
+  animation: aurora-shift-7 27s infinite alternate ease-in-out;
+}
+
+/* Keyframes */
+@keyframes aurora-shift-1 {
+  0% { transform: translateY(-5vh) rotate(-12deg) scaleX(1); opacity: 0.6; }
+  50% { transform: translateY(8vh) rotate(-8deg) scaleX(1.1); opacity: 0.95; }
+  100% { transform: translateY(-2vh) rotate(-15deg) scaleX(0.9); opacity: 0.7; }
+}
+
+@keyframes aurora-shift-2 {
+  0% { transform: translateY(0vh) rotate(15deg) scaleX(1); opacity: 0.7; }
+  50% { transform: translateY(-10vh) rotate(10deg) scaleX(1.15); opacity: 1; }
+  100% { transform: translateY(5vh) rotate(18deg) scaleX(0.95); opacity: 0.6; }
+}
+
+@keyframes aurora-shift-3 {
+  0% { transform: translateY(10vh) rotate(-10deg) scaleX(0.9); opacity: 0.6; }
+  50% { transform: translateY(-5vh) rotate(-5deg) scaleX(1.05); opacity: 0.95; }
+  100% { transform: translateY(0vh) rotate(-12deg) scaleX(1); opacity: 0.7; }
+}
+
+@keyframes aurora-shift-4 {
+  0% { transform: translateY(0vh) rotate(12deg) scaleX(1.05); opacity: 0.7; }
+  50% { transform: translateY(8vh) rotate(18deg) scaleX(0.9); opacity: 0.6; }
+  100% { transform: translateY(-5vh) rotate(8deg) scaleX(1.1); opacity: 0.95; }
+}
+
+@keyframes aurora-shift-5 {
+  0% { transform: translateY(5vh) rotate(-5deg) scaleX(0.9); opacity: 0.7; }
+  50% { transform: translateY(-8vh) rotate(5deg) scaleX(1.2); opacity: 1; }
+  100% { transform: translateY(2vh) rotate(-10deg) scaleX(1); opacity: 0.6; }
+}
+
+@keyframes aurora-shift-6 {
+  0% { transform: translateY(-10vh) rotate(8deg) scaleX(1); opacity: 0.6; }
+  50% { transform: translateY(10vh) rotate(-5deg) scaleX(1.1); opacity: 0.95; }
+  100% { transform: translateY(-5vh) rotate(12deg) scaleX(0.9); opacity: 0.7; }
+}
+
+@keyframes aurora-shift-7 {
+  0% { transform: translateY(12vh) rotate(-15deg) scaleX(1.1); opacity: 0.6; }
+  50% { transform: translateY(-5vh) rotate(-5deg) scaleX(0.95); opacity: 0.9; }
+  100% { transform: translateY(8vh) rotate(-8deg) scaleX(1.05); opacity: 0.7; }
+}

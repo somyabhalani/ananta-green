@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Outfit:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
+:root {
+  --color-canvas-base: #e6e6e6;
+  --color-text-body: #4a5d4e;
+  --color-text-heading: #1e362d;
+  --color-accent: #1e362d;
+  
+  --font-headline: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text-body);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 2vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+#root {
+  flex: 1;
+  background-color: transparent; 
+  border-radius: 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.noise-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 9998; /* Just below the app frame */
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  /* CRITICAL PERFORMANCE OPTIMIZATIONS */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.canvas-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+header {
+  padding: 2rem 4vw;
+  display: flex;
+  justify-content: center; /* Center aligned */
+  align-items: center;
+}
+
+.brand {
+  font-family: var(--font-headline); /* Playfair Display */
+  font-weight: 400;
+  font-style: italic; /* Playfair Display in lowercase italic is notoriously luxurious */
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem); /* Slightly larger to compensate for italic optical size */
+  letter-spacing: 0.02em; /* Keep tracking tight for high-fashion serif */
+  color: var(--color-text-heading);
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 4rem 4vw;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+}
+
+.hero-headline {
+  font-family: var(--font-headline);
+  font-size: clamp(2rem, 4.5vw, 3.5rem); /* Medium font size */
+  line-height: 1.2;
+  color: var(--color-text-heading);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+.hero-subline {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  color: var(--color-text-heading);
+  max-width: 600px;
+  opacity: 0.9;
+}
+
+.the-number {
+  padding: 8rem 4vw;
+  text-align: center;
+}
+
+.number-huge {
+  font-family: var(--font-headline);
+  font-size: clamp(6rem, 15vw, 12rem);
+  color: var(--color-text-heading);
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.number-desc {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.soft-divider {
+  width: 1px;
+  height: 100px;
+  background-color: rgba(30, 54, 45, 0.1);
+  margin: 0 auto;
+}
+
+/* Narrative Sections */
+.narrative {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 8rem 4vw;
+}
+
+.narrative p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-body);
+  line-height: 1.6;
+}
+
+.narrative h2 {
+  font-family: var(--font-headline);
+  font-size: 3rem;
+  color: var(--color-text-heading);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 4rem 4vw;
+}
+
+.showcase-card {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 3rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.showcase-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.showcase-card h3 {
+  font-family: var(--font-headline);
+  font-size: 2rem;
+  color: var(--color-text-heading);
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.showcase-card p {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.quote-section {
+  padding: 10rem 4vw;
+  text-align: center;
+}
+
+.quote-text {
+  font-family: var(--font-headline);
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--color-text-heading);
+  max-width: 1000px;
+  margin: 0 auto;
+  line-height: 1.2;
+}
+
+footer {
+  padding: 6rem 4vw;
+  text-align: center;
+  border-top: 1px solid rgba(30, 54, 45, 0.1);
+  margin-top: 4rem;
+}
+
+.footer-line {
+  font-size: 1.5rem;
+  color: var(--color-text-heading);
+  margin-bottom: 2rem;
+}
+
+.footer-brand {
+  font-family: var(--font-headline);
+  font-size: 3rem;
+  color: var(--color-text-heading);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+  
+  #root {
+    border-radius: 0;
+  }
+
+  .brand {
+    font-size: 1.6rem;
+  }
+
+  header {
+    padding: 1.5rem 6vw;
+  }
+
+  .hero {
+    min-height: 60vh;
+    padding: 3rem 6vw;
+  }
+
+  .hero-headline {
+    font-size: 2.2rem;
+  }
+
+  .hero-subline {
+    font-size: 1.1rem;
+  }
+
+  .the-number, .narrative, .quote-section {
+    padding: 5rem 6vw;
+  }
+
+  .number-huge {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  .number-desc, .narrative p {
+    font-size: 1.1rem;
+  }
+
+  .narrative h2 {
+    font-size: 2.2rem;
+  }
+
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    padding: 2rem 6vw;
+    gap: 1.5rem;
+  }
+
+  .showcase-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .showcase-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .quote-text {
+    font-size: 1.8rem;
+  }
+
+  footer {
+    padding: 4rem 6vw 2rem;
+    margin-top: 2rem;
+  }
+
+  .footer-line {
+    font-size: 1.1rem;
+  }
+
+  .footer-brand {
+    font-size: 2.5rem;
+  }
+}

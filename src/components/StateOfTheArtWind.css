@@ -1,0 +1,43 @@
+/* StateOfTheArtWind.css */
+.wind-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1; /* Above aurora, behind text */
+}
+
+.wind-gust {
+  position: absolute;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(42, 74, 58, 0.25), transparent);
+  filter: blur(3px);
+  left: -50vw; /* Start off screen */
+  animation: blow-wind linear infinite;
+  border-radius: 50%;
+}
+
+.wind-gust-wave {
+  position: absolute;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(42, 74, 58, 0.08) 0%, transparent 70%);
+  filter: blur(12px);
+  left: -80vw;
+  animation: blow-wind linear infinite;
+  border-radius: 50%;
+}
+
+@keyframes blow-wind {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  50% {
+    transform: translateX(75vw) scaleX(1.5);
+  }
+  100% {
+    transform: translateX(180vw) scaleX(0.8);
+  }
+}

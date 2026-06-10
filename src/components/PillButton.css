@@ -1,0 +1,50 @@
+.pill-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--color-button-fill), var(--color-aurora-mint));
+  color: var(--color-text-headline);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 10px rgba(42, 74, 58, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.pill-button::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.pill-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--color-button-hover), var(--color-aurora-mint));
+  box-shadow: 
+    0 8px 20px rgba(42, 74, 58, 0.12),
+    0 4px 8px rgba(42, 74, 58, 0.06),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.pill-button:hover::before {
+  opacity: 1;
+}
+
+.pill-button-text {
+  position: relative;
+  z-index: 1;
+}

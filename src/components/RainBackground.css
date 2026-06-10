@@ -1,0 +1,31 @@
+/* RainBackground.css */
+.rain-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.rain-drop {
+  position: absolute;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(42, 60, 50, 0.3), rgba(30, 45, 40, 0.7));
+  top: -20vh;
+  transform: rotate(12deg);
+  transform-origin: bottom center;
+  animation: fall-rain linear infinite;
+}
+
+@keyframes fall-rain {
+  0% { transform: translateY(0) rotate(12deg) translateX(0); }
+  100% { transform: translateY(120vh) rotate(12deg) translateX(-25vh); }
+}
+
+@keyframes splash-rain {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
