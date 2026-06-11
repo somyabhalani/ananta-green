@@ -65,18 +65,7 @@ export default function CarbonJournal() {
         </section>
         
         <footer style={{ marginTop: '10rem', textAlign: 'center', paddingBottom: '4rem', position: 'relative', overflow: 'hidden' }}>
-        <div style={{
-          position: 'absolute',
-          bottom: 0, left: 0, right: 0,
-          height: '300px',
-          background: `
-            radial-gradient(circle at 20% 100%, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 60%),
-            radial-gradient(circle at 80% 100%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 50%),
-            radial-gradient(circle at 50% 120%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%)
-          `,
-          pointerEvents: 'none',
-          zIndex: 0
-        }}></div>
+
         <div style={{ position: 'relative', zIndex: 1, display: 'flex', justifyContent: 'center' }}>
           <Link to="/" style={{ textDecoration: 'none' }}>
             <PillButton as="span" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>

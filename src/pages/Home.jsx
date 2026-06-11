@@ -7,6 +7,7 @@ import PillButton from '../components/PillButton';
 import BrandLogo from '../components/BrandLogo';
 import AnantaLabsLogo from '../components/AnantaLabsLogo';
 import TiltCard from '../components/TiltCard';
+import SpectraNoise from '../components/SpectraNoise';
 
 export default function Home() {
   useEffect(() => {
@@ -14,21 +15,45 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="canvas-content" style={{ paddingTop: '2vw' }}>
-      <header>
+    <div className="canvas-content" style={{ paddingTop: '2vw', position: 'relative' }}>
+      {/* Dynamic SpectraNoise Background for Header and Mid */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        height: '140vh',
+        zIndex: 0,
+        opacity: 0.6,
+        pointerEvents: 'none',
+        maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
+      }}>
+        <SpectraNoise 
+          theme={4} // 4 is Ocean theme (greens/blues), perfect for Ananta Green
+          speed={0.2}
+          warpAmount={0.8}
+        />
+      </div>
+
+      <header style={{ position: 'relative', zIndex: 10 }}>
         <BrandLogo />
       </header>
 
-      <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
-        <div className="hero-content" style={{ zIndex: 10, position: 'relative' }}>
+      <section className="hero" style={{ position: 'relative', overflow: 'hidden', paddingBottom: '8rem' }}>
+        <div className="hero-content" style={{ zIndex: 10, position: 'relative', color: '#ffffff', textShadow: '0px 4px 20px rgba(0,0,0,0.15)' }}>
           <ParallaxHeroText className="hero-headline">
-            The sun. The wind. The water.<br/>
-            They always were enough.
+            <span style={{ color: '#ffffff' }}>
+              The sun. The wind. The water.<br/>
+              They always were enough.
+            </span>
           </ParallaxHeroText>
           
-          <AnimatedText delay={0.1} className="hero-subtext">
-            Green was never a trend or a movement. It was the original state of everything before we decided otherwise. It still is. Just waiting.
-          </AnimatedText>
+          <div style={{ color: 'rgba(255,255,255,0.85)', textShadow: '0px 2px 10px rgba(0,0,0,0.2)' }}>
+            <AnimatedText delay={0.1} className="hero-subtext">
+              Green was never a trend or a movement. It was the original state of everything before we decided otherwise. It still is. Just waiting.
+            </AnimatedText>
+          </div>
         </div>
       </section>
 
