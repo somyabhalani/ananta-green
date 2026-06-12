@@ -86,10 +86,15 @@ export default function Home() {
         </TiltCard>
 
         <TiltCard className="showcase-card">
-          <h3 style={{ transform: "translateZ(30px)" }}>What is coming.</h3>
+          <h3 style={{ transform: "translateZ(30px)" }}>Carbonix — Live — Free</h3>
           <p style={{ transform: "translateZ(20px)" }}>
-            Solara is the beginning. There is more being built. All of it free. All of it open. All of it aimed at the same place — making clean energy decisions obvious for anyone, anywhere, regardless of who they are or what they know.
+            Instantly map your land and calculate verified carbon credit estimates using live Sentinel-2 satellite imagery. No expensive consultants. Just drop pins on a map and generate your certificate instantly.
           </p>
+          <div style={{ transform: "translateZ(40px)" }}>
+            <a href="https://carbonix1.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <PillButton as="span">Open Carbonix</PillButton>
+            </a>
+          </div>
         </TiltCard>
       </section>
 
