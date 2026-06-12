@@ -88,7 +88,7 @@ export default function Home() {
         <TiltCard className="showcase-card">
           <h3 style={{ transform: "translateZ(30px)" }}>Carbonix — Live — Free</h3>
           <p style={{ transform: "translateZ(20px)" }}>
-            Instantly map your land and calculate verified carbon credit estimates using live Sentinel-2 satellite imagery. No expensive consultants. Just drop pins on a map and generate your certificate instantly.
+            Instantly map your land and calculate verified carbon credit estimates. No expensive consultants or complex paperwork. Just drop pins on a map and generate your certification instantly.
           </p>
           <div style={{ transform: "translateZ(40px)" }}>
             <a href="https://carbonix1.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
